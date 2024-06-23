@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callback - PristineGreen</title>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.19/auth0-spa-js.production.js"></script>
+</head>
+<body>
+  <script>
+    window.addEventListener('load', async function() {
+      const auth0 = await createAuth0Client({
+        domain: "dev-6n3ch8a2n2sben85.us.auth0.com",
+        client_id: "UCV21HhTFxc17t5pIomKtphMsji5vUfg"
+      });
+
+      await auth0.handleRedirectCallback();
+      window.location.replace('/booking.html');  // Redirect to the booking page
+    });
+  </script>
+</body>
+</html>
